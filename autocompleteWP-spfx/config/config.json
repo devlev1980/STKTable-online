@@ -1,0 +1,19 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "autocomplete-spfx-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.js",
+          "manifest": "./src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {},
+  "localizedResources": {
+    "AutocompleteSpfxWebPartStrings": "lib/webparts/autocompleteSpfx/loc/{locale}.js",
+    "PropertyControlStrings": "node_modules/@pnp/spfx-property-controls/lib/loc/{locale}.js"
+  }
+}

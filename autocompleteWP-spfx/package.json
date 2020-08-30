@@ -1,0 +1,40 @@
+{
+  "name": "autocomplete-wp-spfx",
+  "version": "0.0.1",
+  "private": true,
+  "main": "lib/index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "serve": "gulp serve",
+    "build": "gulp bundle",
+    "clean": "gulp clean",
+    "test": "gulp test",
+    "preversion": "node ./tools/pre-version.js",
+    "postversion": "gulp dist"
+  },
+  "dependencies": {
+    "@microsoft/sp-core-library": "~1.4.0",
+    "@microsoft/sp-lodash-subset": "~1.4.0",
+    "@microsoft/sp-office-ui-fabric-core": "~1.4.0",
+    "@microsoft/sp-webpart-base": "~1.4.0",
+    "@pnp/pnpjs": "^2.0.6",
+    "@pnp/spfx-property-controls": "1.19.0",
+    "autocomplete-wp": "file:../autocompleteWP"
+  },
+  "devDependencies": {
+    "@microsoft/sp-build-web": "~1.4.1",
+    "@microsoft/sp-module-interfaces": "~1.4.1",
+    "@microsoft/sp-webpart-workbench": "~1.4.1",
+    "@types/chai": "3.4.34",
+    "@types/es6-promise": "0.0.33",
+    "@types/mocha": "2.2.38",
+    "@types/webpack-env": "1.13.1",
+    "ajv": "~5.2.2",
+    "gulp": "~3.9.1",
+    "gulp-sequence": "1.0.0",
+    "lodash": "^4.17.15",
+    "spfx-uifabric-themes": "^0.8.0"
+  }
+}

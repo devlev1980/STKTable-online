@@ -1,0 +1,131 @@
+// Colors variables
+$inputBg: #72819B;
+$white: #fff;
+$primaryBg: #102344;
+$borderColor: #1C3B61;
+
+
+// ==========  Basic reset ==================
+*, *::after, *:before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem 2rem;
+
+}
+
+ul {
+  list-style: none;
+
+  li {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.container{
+  margin: 0 0 0 auto;
+  max-width: 450px;
+  width: 100%;
+  padding: 10px ;
+  .searchbar_container{
+    position: relative;
+    img.search_icon{
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 100000;
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+    }
+    .autocomplete{
+      width: 100%;
+      padding: 15px 55px;
+      border-radius:35px;
+      box-shadow: none;
+      border: 0;
+      background: $inputBg;
+      color: $white;
+      outline: none;
+      cursor: default;
+      font-size: 18px;
+    }
+
+  }
+
+.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
+  width: 200px;
+  overflow-x: hidden;
+}
+  .users{
+    position: absolute;
+    width: calc(57.5% - 20px);
+    margin: auto;
+    right: 26px;
+    background: $primaryBg;
+    padding: 5px;
+    height: 306px;
+    overflow-y: auto;
+
+    ul>li{
+      cursor: pointer;
+      color: #b0b0b0;
+      padding: 0 15px;
+      height: 62px;
+
+
+
+    }
+    span.highlight {
+      color: white !important;
+    }
+    .user_info__wrapper{
+      align-items: center;
+      padding: 10px ;
+      border-bottom: 1px solid #1c3b61;
+      display: flex;
+      justify-content: flex-start;
+
+      .img__wrapper{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 10px;
+
+        img{
+          height:  100%;
+          object-fit: cover;
+          border-radius: 50%;
+        }
+      }
+      .user__info{
+        margin-left: 1rem;
+        display: inline-block;
+        &-name{
+          display: inline-block;
+          margin-right: 10px;
+        }
+        &-email{
+          display: block;
+        }
+      }
+    }
+    .footer {
+      padding: 10px;
+      color: $white;
+    }
+
+  }
+}
+
+
+

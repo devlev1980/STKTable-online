@@ -1,0 +1,12 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/package-solution.schema.json",
+  "solution": {
+    "name": "autocomplete-wp-spfx-client-side-solution",
+    "id": "7a407edb-5f52-4d38-a272-d14b70a504ec",
+    "version": "1.0.0.0",
+    "includeClientSideAssets": true
+  },
+  "paths": {
+    "zippedPackage": "solution/autocomplete-wp-spfx.sppkg"
+  }
+}
