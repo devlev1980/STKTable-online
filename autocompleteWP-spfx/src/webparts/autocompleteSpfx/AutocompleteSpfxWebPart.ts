@@ -1,16 +1,11 @@
-import { Version } from '@microsoft/sp-core-library';
-import {
-  BaseClientSideWebPart,
-  IPropertyPaneConfiguration,
-  PropertyPaneTextField
-} from '@microsoft/sp-webpart-base';
-
-import { escape } from '@microsoft/sp-lodash-subset';
+import {Version} from '@microsoft/sp-core-library';
+import {BaseClientSideWebPart, IPropertyPaneConfiguration, PropertyPaneTextField,} from '@microsoft/sp-webpart-base';
 
 import * as strings from 'AutocompleteSpfxWebPartStrings';
 
 /** Include Angular Elements JS and Style */
 import 'autocomplete-wp/dist/autocompleteWP/bundle.js';
+
 require('../../../node_modules/autocomplete-wp/dist/autocompleteWP/styles.css');
 
 export interface IAutocompleteSpfxWebPartProps {
@@ -19,8 +14,9 @@ export interface IAutocompleteSpfxWebPartProps {
 
 export default class AutocompleteSpfxWebPart extends BaseClientSideWebPart<IAutocompleteSpfxWebPartProps> {
 
+
   public render(): void {
-    this.domElement.innerHTML = `<app-autocomplete-spfx-web-part description="${ this.properties.description }"></app-autocomplete-spfx-web-part>`;
+    this.domElement.innerHTML = `<app-autocomplete-spfx-web-part style="position: fixed;top: 62px;right: 0;z-index: 1000;width: 50%" description="${this.properties.description}"></app-autocomplete-spfx-web-part>`;
   }
 
   protected get dataVersion(): Version {

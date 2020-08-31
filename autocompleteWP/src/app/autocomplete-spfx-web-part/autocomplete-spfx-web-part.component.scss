@@ -70,10 +70,11 @@ a {
 }
   .users{
     position: absolute;
-    width: calc(57.5% - 20px);
+    width: calc(42.5% - 20px);
+    top: 117%;
     margin: auto;
     right: 26px;
-    background: $primaryBg;
+    background: #102344;
     padding: 5px;
     height: 306px;
     overflow-y: auto;

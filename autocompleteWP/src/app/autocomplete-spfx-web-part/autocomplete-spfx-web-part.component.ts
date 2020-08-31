@@ -43,7 +43,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     }
   }
 
-  constructor(private spService: SharepointService, private renderer: Renderer2, private cdr: ChangeDetectorRef) {
+  constructor(private spService: SharepointService, private renderer: Renderer2) {
   }
 
   ngOnInit() {
@@ -82,7 +82,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     this.showUsers = true;
     setTimeout(() => {
       const charToHighlightFirstName = document.querySelector('.user__info-name span.highlight');
-      const charToHighlightLastName = document.querySelector('.user__info-lastname span.highlight')
+      const charToHighlightLastName = document.querySelector('.user__info-lastname span.highlight');
       if (charToHighlightFirstName) {
         this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
       }
@@ -95,6 +95,8 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
   onSelectUser(user: IProfile) {
     this.selectedUser = user.FirstName + ' ' + user.LastName;
     this.showUsers = false;
+
+    // TODO : redirect to Search page and pass this.selectedUser as parameter
   }
 }
 

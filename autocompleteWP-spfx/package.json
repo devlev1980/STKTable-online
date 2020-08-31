@@ -13,6 +13,7 @@
     "test": "gulp test",
     "preversion": "node ./tools/pre-version.js",
     "postversion": "gulp dist"
+
   },
   "dependencies": {
     "@microsoft/sp-core-library": "~1.4.0",
@@ -21,7 +22,9 @@
     "@microsoft/sp-webpart-base": "~1.4.0",
     "@pnp/pnpjs": "^2.0.6",
     "@pnp/spfx-property-controls": "1.19.0",
-    "autocomplete-wp": "file:../autocompleteWP"
+    "autocomplete-wp": "file:../autocompleteWP",
+    "terser-webpack-plugin-legacy": "1.2.3",
+    "webpack-merge": "4.2.1"
   },
   "devDependencies": {
     "@microsoft/sp-build-web": "~1.4.1",
@@ -36,5 +39,6 @@
     "gulp-sequence": "1.0.0",
     "lodash": "^4.17.15",
     "spfx-uifabric-themes": "^0.8.0"
+
   }
 }
