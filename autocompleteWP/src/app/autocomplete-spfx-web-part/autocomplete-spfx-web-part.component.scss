@@ -3,6 +3,8 @@ $inputBg: #72819B;
 $white: #fff;
 $primaryBg: #102344;
 $borderColor: #1C3B61;
+$footerBg: #0b1b37;
+$textColor: #b0b0b0;
 
 
 // ==========  Basic reset ==================
@@ -78,7 +80,7 @@ a {
 
     ul>li{
       cursor: pointer;
-      color: #b0b0b0;
+      color: $textColor;
       padding: 0 15px;
       height: 62px;
 
@@ -86,12 +88,12 @@ a {
 
     }
     span.highlight {
-      color: white !important;
+      color: $white !important;
     }
     .user_info__wrapper{
       align-items: center;
       padding: 10px ;
-      border-bottom: 1px solid #1c3b61;
+      border-bottom: 1px solid $borderColor;
       display: flex;
       justify-content: flex-start;
 
@@ -112,14 +114,19 @@ a {
         display: inline-block;
         &-name{
           display: inline-block;
-          margin-right: 10px;
+          margin-right: 7px;
         }
         &-email{
           display: block;
         }
+        &-initials{
+          font-size: 25px;
+          color: $inputBg;
+        }
       }
     }
     .footer {
+      background: $footerBg;
       padding: 10px;
       color: $white;
     }

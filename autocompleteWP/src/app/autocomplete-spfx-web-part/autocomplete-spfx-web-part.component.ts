@@ -13,6 +13,7 @@ import {SharepointService} from '../services/sharepoint.service';
 import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
 import {environment} from '../../environments/environment';
+import {IProfile} from '../models/profile.model';
 
 @Component({
   selector: 'app-autocomplete-spfx-web-part',
@@ -55,7 +56,6 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
   }
 
   getFields(profiles) {
-    console.log('Data from service', profiles);
     for (const profile of profiles) {
       const profileObject: IProfile = {FirstName: '', LastName: '', PictureUrl: '', Cell: '', WorkEmail: ''};
       for (const j of profile) {
@@ -69,29 +69,33 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
       }
     }
     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
-    console.log('Filtered', this.profiles)
+    this.profiles = this.profiles.sort((a, b) => {
+      if (a.FirstName > b.FirstName) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
   }
 
   onInput() {
     this.showUsers = true;
     setTimeout(() => {
-      const charToHighlight = document.querySelector('.user__info-name span.highlight');
-      if (charToHighlight) {
-        this.renderer.setStyle(charToHighlight, 'color', '#fff');
+      const charToHighlightFirstName = document.querySelector('.user__info-name span.highlight');
+      const charToHighlightLastName = document.querySelector('.user__info-lastname span.highlight')
+      if (charToHighlightFirstName) {
+        this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
+      }
+      if (charToHighlightLastName) {
+        this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
       }
     }, 0);
   }
 
   onSelectUser(user: IProfile) {
-    this.selectedUser = user.FirstName + ' ' + user.LastName ;
+    this.selectedUser = user.FirstName + ' ' + user.LastName;
     this.showUsers = false;
   }
 }
 
-interface IProfile {
-  FirstName: string;
-  LastName: string;
-  WorkEmail: string;
-  PictureUrl: string;
-  Cell: string;
-}
+

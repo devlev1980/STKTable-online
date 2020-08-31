@@ -23,22 +23,24 @@
     <img src="{{searchIcon}}" alt="" class="search_icon">
   </div>
   <div >
-    <cdk-virtual-scroll-viewport class="users" [itemSize]="5" *ngIf="showUsers">
+    <cdk-virtual-scroll-viewport class="users" [itemSize]="1" *ngIf="showUsers">
       <ul>
         <li *cdkVirtualFor="let profile of profiles | search:selectedUser " class="example-item" (click)="onSelectUser(profile)">
           <div class="user_info__wrapper">
             <div class="img__wrapper">
               <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
               <ng-template #noPicture>
-                <span>{{profile.FirstName.substring(0,1)}}.</span>
+                <div class="user__info-initials">
+                  <span *ngIf="profile.FirstName">{{profile.FirstName.substring(0, 1)}}.</span>
+                  <span *ngIf="profile.LastName">{{profile.LastName.substring(0, 1)}}</span></div>
               </ng-template>
             </div>
             <div class="user__info">
-              <span class="user__info-name"  [innerHTML]="profile.FirstName | highlight: selectedUser">
+              <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedUser">
 
               </span>
-              <span class="user__info-lastname" [innerHTML]="profile.LastName | highlight: selectedUser"></span>
-              <span class="user__info-email" [innerHTML]="profile.WorkEmail"></span>
+              <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedUser"></span>
+              <span class="user__info-email" [innerHTML]="profile?.WorkEmail"></span>
 
             </div>
           </div>
