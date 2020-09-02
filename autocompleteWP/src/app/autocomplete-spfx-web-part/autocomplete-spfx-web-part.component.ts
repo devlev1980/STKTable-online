@@ -57,17 +57,20 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
 
   getFields(profiles) {
     for (const profile of profiles) {
-      const profileObject: IProfile = {FirstName: '', LastName: '', PictureUrl: '', Cell: '', WorkEmail: ''};
+      const profileObject: IProfile = {FirstName: '', LastName: '', PictureUrl: '', Cell: '', WorkEmail: '',FullName: ''};
       for (const j of profile) {
+
         if ((j.Key === 'FirstName' && j.Value !== '') ||
           (j.Key === 'WorkEmail' && j.Value !== null) ||
           (j.Key === 'PictureUrl' && j.Value !== null) ||
           (j.Key === 'LastName' && j.Value !== null)) {
+          profileObject.FullName = ''
           profileObject[j.Key] = j.Value;
           this.profiles.push(profileObject);
         }
       }
     }
+
     this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
     this.profiles = this.profiles.sort((a, b) => {
       if (a.FirstName > b.FirstName) {
@@ -76,10 +79,20 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
         return -1;
       }
     });
+    this.setFullName(this.profiles);
+
+  }
+  setFullName(profiles){
+    this.profiles = profiles.map(profile=> {
+       profile.FullName = profile.FirstName + ' '+ profile.LastName;
+       return profile
+    });
+
   }
 
   onInput() {
     this.showUsers = true;
+
     setTimeout(() => {
       const charToHighlightFirstName = document.querySelector('.user__info-name span.highlight');
       const charToHighlightLastName = document.querySelector('.user__info-lastname span.highlight');
@@ -87,6 +100,9 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
         this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
       }
       if (charToHighlightLastName) {
+        this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
+      }else if(charToHighlightFirstName && charToHighlightLastName){
+        this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
         this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
       }
     }, 0);

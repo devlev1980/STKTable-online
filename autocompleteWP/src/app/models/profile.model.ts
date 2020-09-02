@@ -4,4 +4,5 @@ export interface IProfile {
   WorkEmail: string;
   PictureUrl: string;
   Cell: string;
+  FullName: string;
 }
