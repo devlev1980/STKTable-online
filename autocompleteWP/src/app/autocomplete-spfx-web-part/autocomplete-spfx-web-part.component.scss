@@ -39,6 +39,9 @@ a {
   padding: 10px ;
   .searchbar_container{
     position: relative;
+    input[type='text']::placeholder{
+      color:$white;
+    }
     img.search_icon{
       position: absolute;
       left: 15px;
