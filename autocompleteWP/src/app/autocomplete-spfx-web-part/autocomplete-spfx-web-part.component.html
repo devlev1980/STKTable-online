@@ -1,25 +1,6 @@
-<!--<p>-->
-<!--  It works! Description: {{description}}-->
-<!--</p>-->
-<!--<div class="container" #autocomplete>-->
-<!--  <div class="searchbar_container">-->
-<!--    <input type="text" class="autocomplete" (click)="showUsers = true" (input)="onInput()" [(ngModel)]="selectedEmployee">-->
-<!--  </div>-->
-<!--&lt;!&ndash;  {{profiles | json}}&ndash;&gt;-->
-
-<!--  <ul>-->
-<!--    <li *ngFor="let profile of profiles">-->
-<!--      <p *ngIf="profile.Key ==='FirstName'">Name{{profile.Value}}</p>-->
-<!--      <p *ngIf="profile.Key ==='WorkEmail'">Email{{profile.Value}}</p>-->
-<!--    </li>-->
-<!--  </ul>-->
-
-
-<!--</div>-->
-
 <div class="container" #autocomplete>
   <div class="searchbar_container">
-    <input type="text" class="autocomplete" (click)="showUsers = true"  (input)="onInput()" [(ngModel)]="selectedUser">
+    <input type="text" class="autocomplete" placeholder="FIND PEOPLE..." (click)="showUsers = true"  (input)="onInput()" [(ngModel)]="selectedUser">
     <img src="{{searchIcon}}" alt="" class="search_icon">
   </div>
   <div >
@@ -31,17 +12,15 @@
               <img [src]="profile.PictureUrl" alt="profile picture" *ngIf="profile.PictureUrl;else noPicture">
               <ng-template #noPicture>
                 <div class="user__info-initials">
-                  <span *ngIf="profile.FirstName">{{profile.FirstName.substring(0, 1)}}.</span>
-                  <span *ngIf="profile.LastName">{{profile.LastName.substring(0, 1)}}</span></div>
+                  <span *ngIf="profile.FirstName !== ''">{{profile.FirstName.substring(0, 1)}}</span>
+                  <span *ngIf="profile.LastName">.{{profile.LastName.substring(0, 1)}}</span>
+                </div>
               </ng-template>
             </div>
             <div class="user__info">
-              <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedUser">
-
-              </span>
+              <span class="user__info-name"  [innerHTML]="profile?.FirstName | highlight: selectedUser"></span>
               <span class="user__info-lastname" [innerHTML]="profile?.LastName | highlight: selectedUser"></span>
               <span class="user__info-email" [innerHTML]="profile?.WorkEmail"></span>
-
             </div>
           </div>
         </li>
@@ -49,7 +28,6 @@
       <div class="footer">Search Directory for {{selectedUser}}</div>
     </cdk-virtual-scroll-viewport>
   </div>
-
 </div>
 
 

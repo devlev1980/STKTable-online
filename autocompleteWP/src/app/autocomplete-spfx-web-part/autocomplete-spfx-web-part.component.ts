@@ -56,14 +56,28 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
   }
 
   getFields(profiles) {
-    for (const profile of profiles) {
-      const profileObject: IProfile = {FirstName: '', LastName: '', PictureUrl: '', Cell: '', WorkEmail: '',FullName: ''};
-      for (const j of profile) {
+    // TODO : get profiles filtered by employeeId
+    console.log('profiles', profiles)
 
-        if ((j.Key === 'FirstName' && j.Value !== '') ||
-          (j.Key === 'WorkEmail' && j.Value !== null) ||
+    for (const profile of profiles) {
+      const profileObject: IProfile = {
+        EmployeeID: '',
+        FirstName: '',
+        LastName: '',
+        PictureUrl: '',
+        Cell: '',
+        WorkEmail: '',
+        FullName: ''
+      };
+      for (const j of profile) {
+        if (
+          (j.Key === 'EmployeeID' && j.Value !== '' && j.Value !== null) ||
+          (j.Key === 'FirstName' && j.Value !== '' ) ||
+          (j.Key === 'WorkEmail' && j.Value !== null ||
+          (j.Key === 'Cell' && j.Value !== '' && j.Value !== null) ||
           (j.Key === 'PictureUrl' && j.Value !== null) ||
-          (j.Key === 'LastName' && j.Value !== null)) {
+          (j.Key === 'FullName' && j.Value !== '') ||
+          (j.Key === 'LastName' && j.Value !== null))) {
           profileObject.FullName = ''
           profileObject[j.Key] = j.Value;
           this.profiles.push(profileObject);
@@ -79,13 +93,16 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
         return -1;
       }
     });
+    console.log('filtered profiles', this.profiles)
+
     this.setFullName(this.profiles);
 
   }
-  setFullName(profiles){
-    this.profiles = profiles.map(profile=> {
-       profile.FullName = profile.FirstName + ' '+ profile.LastName;
-       return profile
+
+  setFullName(profiles) {
+    this.profiles = profiles.map(profile => {
+      profile.FullName = profile.FirstName + ' ' + profile.LastName;
+      return profile
     });
 
   }
@@ -101,7 +118,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
       }
       if (charToHighlightLastName) {
         this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
-      }else if(charToHighlightFirstName && charToHighlightLastName){
+      } else if (charToHighlightFirstName && charToHighlightLastName) {
         this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
         this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
       }

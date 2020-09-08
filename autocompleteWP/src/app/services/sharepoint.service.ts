@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {map, tap} from 'rxjs/operators';
+import {filter, map, tap} from 'rxjs/operators';
 import {Subject} from 'rxjs';
 
 @Injectable({
@@ -16,7 +16,7 @@ export class SharepointService {
   getProfiles() {
     const appweburl = `_api/search/query`;
     // const properties = 'Office,Id,FirstName,LastName,MobilePhone,WorkPhone,AccountName,Department,JobTitle,PictureURL,WorkEmail,WorkId,EmployeeID'
-    const properties = 'FirstName,WorkEmail,PictureUrl,LastName,Cell';
+    const properties = 'EmployeeID,FirstName,WorkEmail,PictureUrl,LastName,Cell';
     const httpURL = `${environment.apiUrl}${appweburl}`;
     const httpParams = new HttpParams()
       .set('queryText', `'*'`)
@@ -26,7 +26,7 @@ export class SharepointService {
     return this.http.get(httpURL, {params: httpParams})
       .pipe(
         map((res: any) => res.PrimaryQueryResult.RelevantResults.Table.Rows),
-        map(item => item.map(el => el.Cells))
+        map(item => item.map(el => el.Cells)),
 
           // .pipe(
           //   map((res: any) => res.PrimaryQueryResult.RelevantResults.Table.Rows),

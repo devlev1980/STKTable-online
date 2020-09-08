@@ -44,20 +44,20 @@ a {
       left: 15px;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 100000;
+      z-index: 100;
       display: inline-block;
       width: 30px;
       height: 30px;
     }
     .autocomplete{
-      width: 100%;
-      padding: 15px 55px;
-      border-radius:35px;
+      width: 81%;
+      padding: 9px 55px;
+      border-radius: 35px;
       box-shadow: none;
       border: 0;
-      background: $inputBg;
-      color: $white;
-      outline: none;
+      background: #72819b;
+      color: #fff;
+      outline: 0;
       cursor: default;
       font-size: 18px;
     }
@@ -70,10 +70,10 @@ a {
 }
   .users{
     position: absolute;
-    width: calc(42.5% - 20px);
-    top: 117%;
-    margin: auto;
-    right: 26px;
+    width: calc(34.5% - 20px);
+    top: 129%;
+    /* margin: auto; */
+    right: 110px;
     background: #102344;
     padding: 5px;
     height: 306px;

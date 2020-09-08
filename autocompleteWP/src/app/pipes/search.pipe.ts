@@ -10,8 +10,7 @@ export class SearchPipe implements PipeTransform {
       return employees;
     }
     return employees.filter((user) => {
-        return user.FirstName.includes(searchTerm) || user.LastName.includes(searchTerm) || user.FullName.includes(searchTerm);
-
+        return user.FirstName.toLowerCase().includes(searchTerm.toLowerCase()) || user.LastName.toLowerCase().includes(searchTerm.toLowerCase()) || user.FullName.toLowerCase().includes(searchTerm.toLowerCase());
     });
   }
 
