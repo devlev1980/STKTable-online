@@ -10,6 +10,11 @@ import {FormsModule} from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
 import {TypeaheadModule} from 'ngx-bootstrap/typeahead';
 import { HighlightPipe } from './pipes/highlight.pipe';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatTableModule} from '@angular/material/table';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSortModule} from '@angular/material/sort';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { HighlightPipe } from './pipes/highlight.pipe';
     ScrollingModule,
     FormsModule,
     TypeaheadModule,
+    MatCheckboxModule,
+    MatTableModule,
+    MatButtonModule,
+    MatSortModule,
+    MatInputModule,
 
   ],
   providers: [],

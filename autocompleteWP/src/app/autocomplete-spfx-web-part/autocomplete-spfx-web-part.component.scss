@@ -1,142 +1,26 @@
-// Colors variables
-$inputBg: #72819B;
-$white: #fff;
-$primaryBg: #102344;
-$borderColor: #1C3B61;
-$footerBg: #0b1b37;
-$textColor: #b0b0b0;
-
-
-// ==========  Basic reset ==================
-*, *::after, *:before {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  padding: 1rem 2rem;
-
-}
-
-ul {
-  list-style: none;
-
-  li {
-    padding: 0;
-    margin: 0;
-  }
-}
-
-a {
-  text-decoration: none;
-}
-
 .container{
-  margin: 0 0 0 auto;
-  max-width: 450px;
-  width: 100%;
-  padding: 10px ;
-  .searchbar_container{
-    position: relative;
-    input[type='text']::placeholder{
-      color:$white;
-    }
-    img.search_icon{
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: 100;
-      display: inline-block;
-      width: 30px;
-      height: 30px;
-    }
-    .autocomplete{
-      width: 81%;
-      padding: 9px 55px;
-      border-radius: 35px;
-      box-shadow: none;
-      border: 0;
-      background: #72819b;
-      color: #fff;
-      outline: 0;
-      cursor: default;
-      font-size: 18px;
-    }
-
+  .info-form{
+    width: 100%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
   }
-
-.cdk-virtual-scroll-orientation-vertical .cdk-virtual-scroll-content-wrapper {
-  width: 200px;
-  overflow-x: hidden;
-}
-  .users{
-    position: absolute;
-    width: calc(34.5% - 20px);
-    top: 129%;
-    /* margin: auto; */
-    right: 110px;
-    background: #102344;
-    padding: 5px;
-    height: 306px;
-    overflow-y: auto;
-
-    ul>li{
-      cursor: pointer;
-      color: $textColor;
-      padding: 0 15px;
-      height: 62px;
-
-
-
-    }
-    span.highlight {
-      color: $white !important;
-    }
-    .user_info__wrapper{
-      align-items: center;
-      padding: 10px ;
-      border-bottom: 1px solid $borderColor;
-      display: flex;
-      justify-content: flex-start;
-
-      .img__wrapper{
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin-right: 10px;
-
-        img{
-          height:  100%;
-          object-fit: cover;
-          border-radius: 50%;
-        }
+  padding: 10px 20px;
+  form{
+    table{
+      input[type="text"]:active{
+        border: 0 !important;
       }
-      .user__info{
-        margin-left: 1rem;
-        display: inline-block;
-        &-name{
-          display: inline-block;
-          margin-right: 7px;
-        }
-        &-email{
-          display: block;
-        }
-        &-initials{
-          font-size: 25px;
-          color: $inputBg;
-        }
-      }
-    }
-    .footer {
-      background: $footerBg;
-      padding: 10px;
-      color: $white;
-    }
 
+    }
+  }
+  .actions{
+    margin-top: 3rem;
+    max-width: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
   }
 }
-
 
 

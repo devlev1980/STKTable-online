@@ -1,19 +1,260 @@
 import {
-  ChangeDetectionStrategy, ChangeDetectorRef,
+  ChangeDetectionStrategy,
   Component,
-  ElementRef,
-  HostListener,
-  Input,
   OnInit,
   Renderer2,
-  ViewChild,
   ViewEncapsulation
 } from '@angular/core';
 import {SharepointService} from '../services/sharepoint.service';
-import {Observable} from 'rxjs';
 import {FormGroup} from '@angular/forms';
-import {environment} from '../../environments/environment';
-import {IProfile} from '../models/profile.model';
+
+import {MatTableDataSource} from '@angular/material/table';
+import {SelectionModel} from '@angular/cdk/collections';
+import {DataToEdit} from '../models/data-to-edit';
+import {CurrentUserModel} from '../models/current-user.model';
+
+export interface PeriodicElement {
+  checked: boolean;
+  itemName: string;
+  region: string;
+  customerName: string;
+  ecSalesPrice: number;
+  hqHtdCost: number;
+  transferPrice: number;
+  localizationCost: number;
+  localCost: number;
+  gm: number;
+  januaryData: IDataPerMonth;
+  februaryData: IDataPerMonth;
+}
+
+interface IDataPerMonth {
+  quantity: number;
+  usd: number;
+}
+
+const ELEMENT_DATA: PeriodicElement[] = [
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  },
+  {
+    checked: false,
+    itemName: 'GOLD 60LT Drum',
+    region: 'Columbia',
+    customerName: 'Adama Culumbia SAS',
+    ecSalesPrice: 12,
+    hqHtdCost: 5,
+    transferPrice: 0,
+    localizationCost: 0,
+    localCost: 0,
+    gm: 58,
+    januaryData: {
+      quantity: null,
+      usd: 12000
+    },
+    februaryData: {
+      quantity: null,
+      usd: 0
+    }
+
+
+  }
+];
 
 @Component({
   selector: 'app-autocomplete-spfx-web-part',
@@ -23,114 +264,80 @@ import {IProfile} from '../models/profile.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AutocompleteSpfxWebPartComponent implements OnInit {
-  @Input() description: string;
-  profiles: IProfile[] = [];
-  profiles$: Observable<any>;
-  selectedEmployee: any;
-  userProfiles: any;
-  showUsers: boolean = false;
-  selectedUser: string;
-  inputForm: FormGroup;
-  @ViewChild('username') userName: ElementRef;
-  @ViewChild('autocomplete') autoComplete: ElementRef;
-  searchIcon: string = environment.searchICon;
+  currentUser: CurrentUserModel;
+  displayedColumns: string[] = ['checkbox', 'itemName', 'region', 'customerName', 'ecSalesPrice', 'hqHtdCost', 'transferPrice', 'localizationCost', 'localCost', 'gm', 'jan20qty', 'jan20usd', 'feb20qty', 'feb20usd'];
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  allowMultiSelect = true;
+  selection = new SelectionModel<PeriodicElement>(true, []);
+  tableForm: FormGroup;
+  selectedRows: Array<PeriodicElement> = [];
+  selectedRow: PeriodicElement;
+  fieldsToEdit: DataToEdit = {
+    jan21quantity: '',
+    feb21quantity: '',
+    march21quantity: '',
+    april21quantity: '',
+    may21quantity: '',
+    june21quantity: '',
+    july21quantity: '',
+    august21quantity: '',
+    september21quantity: '',
+    october21quantity: '',
+    november21quantity: '',
+    december21quantity: '',
+  };
 
-
-  @HostListener('document:click', ['$event'])
-  handleOutsideClick(event) {
-    if (!this.autoComplete.nativeElement.contains(event.target)) {
-      this.showUsers = false;
-    }
-  }
 
   constructor(private spService: SharepointService, private renderer: Renderer2) {
   }
 
   ngOnInit() {
-    this.spService.getProfiles()
-      .subscribe(data => {
-        this.getFields(data);
-      });
-
+    this.spService.getCurrentUser().subscribe((data) => this.currentUser = data);
+    this.spService.getDataFromMasterData().subscribe(excel=>{
+      console.log(excel)
+    })
 
   }
 
-  getFields(profiles) {
-    // TODO : get profiles filtered by employeeId
-    console.log('profiles', profiles)
+  /** Whether the number of selected elements matches the total number of rows. */
+  isAllSelected() {
+    const numSelected = this.selection.selected.length;
+    const numRows = this.dataSource.data.length;
+    return numSelected === numRows;
+  }
 
-    for (const profile of profiles) {
-      const profileObject: IProfile = {
-        EmployeeID: '',
-        FirstName: '',
-        LastName: '',
-        PictureUrl: '',
-        Cell: '',
-        WorkEmail: '',
-        FullName: ''
-      };
-      for (const j of profile) {
-        if (
-          (j.Key === 'EmployeeID' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'FirstName' && j.Value !== '' ) ||
-          (j.Key === 'WorkEmail' && j.Value !== null ||
-          (j.Key === 'Cell' && j.Value !== '' && j.Value !== null) ||
-          (j.Key === 'PictureUrl' && j.Value !== null) ||
-          (j.Key === 'FullName' && j.Value !== '') ||
-          (j.Key === 'LastName' && j.Value !== null))) {
-          profileObject.FullName = ''
-          profileObject[j.Key] = j.Value;
-          this.profiles.push(profileObject);
-        }
-      }
+  /** Selects all rows if they are not all selected; otherwise clear selection. */
+  masterToggle() {
+    this.isAllSelected() ?
+      this.selection.clear() :
+      this.dataSource.data.forEach(row => this.selection.select(row));
+    if (this.isAllSelected()) {
+      this.selectedRows = [...this.dataSource.data];
+    } else {
+      this.selectedRows = [];
     }
 
-    this.profiles = this.profiles.filter((item, index) => this.profiles.indexOf(item) === index);
-    this.profiles = this.profiles.sort((a, b) => {
-      if (a.FirstName > b.FirstName) {
-        return 1;
-      } else {
-        return -1;
-      }
-    });
-    console.log('filtered profiles', this.profiles)
+    console.log('All Selected rows', this.selectedRows);
+  }
 
-    this.setFullName(this.profiles);
+  onSaveData() {
+    console.log(this.selectedRows);
+  }
+
+  onCheck(row: PeriodicElement, event) {
+    if (event.checked) {
+      row.checked = event.checked;
+      this.selectedRows.push(row);
+    } else {
+      this.selectedRows.splice(this.selectedRows.indexOf(row), 1);
+    }
+    console.log('Selected rows', this.selectedRows);
+  }
+
+  onSelectAll() {
 
   }
 
-  setFullName(profiles) {
-    this.profiles = profiles.map(profile => {
-      profile.FullName = profile.FirstName + ' ' + profile.LastName;
-      return profile
-    });
 
-  }
-
-  onInput() {
-    this.showUsers = true;
-
-    setTimeout(() => {
-      const charToHighlightFirstName = document.querySelector('.user__info-name span.highlight');
-      const charToHighlightLastName = document.querySelector('.user__info-lastname span.highlight');
-      if (charToHighlightFirstName) {
-        this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
-      }
-      if (charToHighlightLastName) {
-        this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
-      } else if (charToHighlightFirstName && charToHighlightLastName) {
-        this.renderer.setStyle(charToHighlightFirstName, 'color', '#fff');
-        this.renderer.setStyle(charToHighlightLastName, 'color', '#fff');
-      }
-    }, 0);
-  }
-
-  onSelectUser(user: IProfile) {
-    this.selectedUser = user.FirstName + ' ' + user.LastName;
-    this.showUsers = false;
-
-    // TODO : redirect to Search page and pass this.selectedUser as parameter
-  }
 }
-
 

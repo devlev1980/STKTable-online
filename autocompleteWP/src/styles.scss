@@ -1,4 +1,61 @@
 /* You can add global styles to this file, and also import other style files */
 
+
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; outline: none }
+.mat-form-field{
+  margin-right: 3rem;
+  width: 100%;
+}
+.mat-table{
+  width: 100%;
+  background: #96C5F7;
+  .mat-header-cell{
+    .mat-checkbox-inner-container.mat-checkbox-inner-container-no-side-margin {
+      border: 1px solid white;
+    }
+  }
+  tr.mat-header-row{
+    background: #0B1D51;
+    color: white;
+  }
+  tr.mat-footer-row.isActive, tr.mat-row.isActive{
+    background: #0B1D51;
+  }
+
+
+  mat-cell:first-of-type, mat-footer-cell:first-of-type, mat-header-cell:first-of-type {
+    padding-left: 24px;
+    height: 47px;
+    border-bottom: 1px solid rgba(0,0,0,.12);
+    border-right: 1px solid rgba(0,0,0,.12);
+  }
+
+  th{
+    font-size:17px;
+    color: white;
+    background: #0B1D51;
+
+  }
+  tr{
+    td{
+      color: #4F6367;
+      padding: 10px;
+      font-size: 18px;
+      border-right: 1px solid rgba(0,0,0,.12);
+
+      input.readonly{
+        border: 0;
+        background-color: transparent;
+        width: 100%;
+
+      }
+
+    }
+    .mat-checkbox-checked.mat-primary .mat-checkbox-background,.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+      background-color: #0B1D51;
+    }
+  }
+}
+
+

@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/current-user.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/data-to-edit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/config/serve.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/config/serve.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.prod.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +49,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\PZProject\Mobileye\searchbar2\autocompleteWP\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\ASUS\Documents\Dev_projects\STK_projects\STK_table\PzProjects-Autocomplete\autocompleteWP\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -88,7 +99,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.serve">
+  <component name="RunManager" selected="npm.start">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/autocompleteWP-spfx/package.json" />
       <command value="run" />
@@ -119,16 +130,6 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="clean" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/autocompleteWP-spfx/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="clean" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
     <configuration name="serve" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/autocompleteWP-spfx/package.json" />
       <command value="run" />
@@ -139,13 +140,23 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/autocompleteWP/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="npm.serve" />
         <item itemvalue="npm.bundle" />
+        <item itemvalue="npm.start" />
         <item itemvalue="npm.bundle (1)" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.clean" />
       </list>
     </recent_temporary>
   </component>
@@ -167,6 +178,7 @@
       <workItem from="1599126100627" duration="9262000" />
       <workItem from="1599374514887" duration="1283000" />
       <workItem from="1599570571981" duration="4190000" />
+      <workItem from="1599993800979" duration="7180000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -229,21 +241,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599037754833" />
-    <state width="1882" height="258" key="GridCell.Tab.0.bottom" timestamp="1599574578259">
+    <state width="1899" height="274" key="GridCell.Tab.0.bottom" timestamp="1600000964634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1882" height="258" key="GridCell.Tab.0.center" timestamp="1599574578259">
+    <state width="1899" height="274" key="GridCell.Tab.0.center" timestamp="1600000964634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1882" height="258" key="GridCell.Tab.0.left" timestamp="1599574578259">
+    <state width="1899" height="274" key="GridCell.Tab.0.left" timestamp="1600000964634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1882" height="258" key="GridCell.Tab.0.right" timestamp="1599574578259">
+    <state width="1899" height="274" key="GridCell.Tab.0.right" timestamp="1600000964634">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1599375211755">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -253,9 +269,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="550" y="239" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1599573634777" />
-    <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1598800172781">
+    <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1600001051593">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600001051593" />
     <state x="760" y="413" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1598800172781" />
     <state x="854" y="436" width="348" height="298" key="org.angular.cli.generate" timestamp="1598775720389">
       <screen x="0" y="0" width="1920" height="1040" />

@@ -16,7 +16,8 @@ export default class AutocompleteSpfxWebPart extends BaseClientSideWebPart<IAuto
 
 
   public render(): void {
-    this.domElement.innerHTML = `<app-autocomplete-spfx-web-part style="position: fixed;top: 68px;z-index: 5;width: 50%;right: -69px" description="${this.properties.description}"></app-autocomplete-spfx-web-part>`;
+
+    this.domElement.innerHTML = `<app-autocomplete-spfx-web-part  description="${this.properties.description}"></app-autocomplete-spfx-web-part>`;
   }
 
   protected get dataVersion(): Version {
