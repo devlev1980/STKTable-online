@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
-import {HttpClient, HttpParams} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {filter, map, tap} from 'rxjs/operators';
-import {Observable, Subject} from 'rxjs';
+import {Observable} from 'rxjs';
 import {CurrentUserModel} from '../models/current-user.model';
 
 @Injectable({
@@ -42,9 +41,11 @@ export class SharepointService {
   }
 
   getDataFromMasterData(){
-    let excelLink = 'Master Data Sales';
-    let url = `${environment.apiUrl}/_api/web/folders`
+    let url = `${environment.apiUrl}/ _api/web/lists/GetByTitle('MasterDataList')/items`;
     return this.http.get(url);
+  }
+  getList(){
+
   }
 
 

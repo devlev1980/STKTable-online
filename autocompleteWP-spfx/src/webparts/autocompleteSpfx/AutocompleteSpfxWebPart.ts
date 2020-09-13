@@ -1,6 +1,5 @@
 import {Version} from '@microsoft/sp-core-library';
 import {BaseClientSideWebPart, IPropertyPaneConfiguration, PropertyPaneTextField,} from '@microsoft/sp-webpart-base';
-
 import * as strings from 'AutocompleteSpfxWebPartStrings';
 
 /** Include Angular Elements JS and Style */
@@ -16,7 +15,6 @@ export default class AutocompleteSpfxWebPart extends BaseClientSideWebPart<IAuto
 
 
   public render(): void {
-
     this.domElement.innerHTML = `<app-autocomplete-spfx-web-part  description="${this.properties.description}"></app-autocomplete-spfx-web-part>`;
   }
 

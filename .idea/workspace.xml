@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ac719f82-481d-44fe-8ecf-5af61e3eff95" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/current-user.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/autocompleteWP/src/app/models/data-to-edit.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/config/serve.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/config/serve.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP-spfx/src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP-spfx/src/webparts/autocompleteSpfx/AutocompleteSpfxWebPart.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/autocomplete-spfx-web-part/autocomplete-spfx-web-part.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/app/services/sharepoint.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.prod.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.prod.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autocompleteWP/src/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/src/styles.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autocompleteWP/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/autocompleteWP/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +37,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -49,7 +45,7 @@
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="C:\Users\ASUS\Documents\Dev_projects\STK_projects\STK_table\PzProjects-Autocomplete\autocompleteWP\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/autocompleteWP/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -99,7 +95,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="npm.serve">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/autocompleteWP-spfx/package.json" />
       <command value="run" />
@@ -179,6 +175,7 @@
       <workItem from="1599374514887" duration="1283000" />
       <workItem from="1599570571981" duration="4190000" />
       <workItem from="1599993800979" duration="7180000" />
+      <workItem from="1600015812155" duration="3681000" />
     </task>
     <task id="LOCAL‎00001" summary="add project">
       <created>1598800237065</created>
@@ -241,24 +238,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="679" y="264" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1599037754833" />
-    <state width="1899" height="274" key="GridCell.Tab.0.bottom" timestamp="1600000964634">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2496" height="356" key="GridCell.Tab.0.bottom" timestamp="1600019477775">
+      <screen x="0" y="23" width="2560" height="1337" />
     </state>
+    <state width="2496" height="356" key="GridCell.Tab.0.bottom/-1920.23.1920.1057/0.23.2560.1337@0.23.2560.1337" timestamp="1600019477775" />
     <state width="1899" height="274" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1899" height="274" key="GridCell.Tab.0.center" timestamp="1600000964634">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2496" height="356" key="GridCell.Tab.0.center" timestamp="1600019477774">
+      <screen x="0" y="23" width="2560" height="1337" />
     </state>
+    <state width="2496" height="356" key="GridCell.Tab.0.center/-1920.23.1920.1057/0.23.2560.1337@0.23.2560.1337" timestamp="1600019477774" />
     <state width="1899" height="274" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1899" height="274" key="GridCell.Tab.0.left" timestamp="1600000964634">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2496" height="356" key="GridCell.Tab.0.left" timestamp="1600019477774">
+      <screen x="0" y="23" width="2560" height="1337" />
     </state>
+    <state width="2496" height="356" key="GridCell.Tab.0.left/-1920.23.1920.1057/0.23.2560.1337@0.23.2560.1337" timestamp="1600019477774" />
     <state width="1899" height="274" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
-    <state width="1899" height="274" key="GridCell.Tab.0.right" timestamp="1600000964634">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2496" height="356" key="GridCell.Tab.0.right" timestamp="1600019477775">
+      <screen x="0" y="23" width="2560" height="1337" />
     </state>
+    <state width="2496" height="356" key="GridCell.Tab.0.right/-1920.23.1920.1057/0.23.2560.1337@0.23.2560.1337" timestamp="1600019477775" />
     <state width="1899" height="274" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1600000964634" />
     <state width="1882" height="258" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1599574578259" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1599375211755">
