@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 import {CurrentUserModel} from '../models/current-user.model';
+import * as pnp from 'sp-pnp-js';
 
 @Injectable({
   providedIn: 'root'
@@ -40,11 +41,13 @@ export class SharepointService {
     //   );
   }
 
-  getDataFromMasterData(){
+  getDataFromMasterData() {
     let url = `${environment.apiUrl}/ _api/web/lists/GetByTitle('MasterDataList')/items`;
     return this.http.get(url);
   }
-  getList(){
+
+  getList() {
+
 
   }
 

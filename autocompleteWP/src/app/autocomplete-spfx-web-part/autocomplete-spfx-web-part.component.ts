@@ -12,6 +12,9 @@ import {MatTableDataSource} from '@angular/material/table';
 import {SelectionModel} from '@angular/cdk/collections';
 import {DataToEdit} from '../models/data-to-edit';
 import {CurrentUserModel} from '../models/current-user.model';
+import * as pnp from 'sp-pnp-js';
+
+
 
 export interface PeriodicElement {
   checked: boolean;
@@ -293,8 +296,16 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
 
   ngOnInit() {
     this.spService.getCurrentUser().subscribe((data) => this.currentUser = data);
-    this.spService.getDataFromMasterData().subscribe(excel=>{
-      console.log(excel)
+    pnp.sp.web.currentUser.get().then(a => {
+      console.log('aaa', a)
+    });
+
+
+    pnp.sp.web.lists.getByTitle('MasterDataList').views.get().then(fields=>{
+      console.log('fields',fields)
+    })
+    pnp.sp.web.lists.getByTitle('MasterDataList').items.get().then(rows=>{
+      console.log('rows',rows)
     })
 
   }
