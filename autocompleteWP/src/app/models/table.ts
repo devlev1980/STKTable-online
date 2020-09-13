@@ -1,7 +1,4 @@
-export interface Table{
-  row: IRow[]
-}
-interface IRow{
+export interface IRow{
   Annual_x0020_QTY: number
   Annual_x0020_Sales: number
   Apr_x002d_20_x0020_Qty: number
@@ -63,4 +60,5 @@ interface IRow{
   Transfer_x0020_Price: number
   Update_x0020_date: string
   Version: string
+  checked: boolean
 }

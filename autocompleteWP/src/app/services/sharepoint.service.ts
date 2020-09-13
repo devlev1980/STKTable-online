@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import {Observable} from 'rxjs';
+import {from, Observable} from 'rxjs';
 import {CurrentUserModel} from '../models/current-user.model';
 import * as pnp from 'sp-pnp-js';
 
@@ -47,7 +47,7 @@ export class SharepointService {
   }
 
   getList() {
-
+    return from(pnp.sp.web.lists.getByTitle('MasterDataList').items.get())
 
   }
 

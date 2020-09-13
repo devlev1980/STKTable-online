@@ -13,251 +13,252 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {DataToEdit} from '../models/data-to-edit';
 import {CurrentUserModel} from '../models/current-user.model';
 import * as pnp from 'sp-pnp-js';
+import {IRow} from '../models/table';
+import * as _ from 'lodash'
 
 
-
-export interface PeriodicElement {
-  checked: boolean;
-  itemName: string;
-  region: string;
-  customerName: string;
-  ecSalesPrice: number;
-  hqHtdCost: number;
-  transferPrice: number;
-  localizationCost: number;
-  localCost: number;
-  gm: number;
-  januaryData: IDataPerMonth;
-  februaryData: IDataPerMonth;
-}
-
-interface IDataPerMonth {
-  quantity: number;
-  usd: number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  },
-  {
-    checked: false,
-    itemName: 'GOLD 60LT Drum',
-    region: 'Columbia',
-    customerName: 'Adama Culumbia SAS',
-    ecSalesPrice: 12,
-    hqHtdCost: 5,
-    transferPrice: 0,
-    localizationCost: 0,
-    localCost: 0,
-    gm: 58,
-    januaryData: {
-      quantity: null,
-      usd: 12000
-    },
-    februaryData: {
-      quantity: null,
-      usd: 0
-    }
-
-
-  }
-];
+// export interface PeriodicElement {
+//   checked: boolean;
+//   itemName: string;
+//   region: string;
+//   customerName: string;
+//   ecSalesPrice: number;
+//   hqHtdCost: number;
+//   transferPrice: number;
+//   localizationCost: number;
+//   localCost: number;
+//   gm: number;
+//   januaryData: IDataPerMonth;
+//   februaryData: IDataPerMonth;
+// }
+//
+// interface IDataPerMonth {
+//   quantity: number;
+//   usd: number;
+// }
+//
+// const ELEMENT_DATA: PeriodicElement[] = [
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   },
+//   {
+//     checked: false,
+//     itemName: 'GOLD 60LT Drum',
+//     region: 'Columbia',
+//     customerName: 'Adama Culumbia SAS',
+//     ecSalesPrice: 12,
+//     hqHtdCost: 5,
+//     transferPrice: 0,
+//     localizationCost: 0,
+//     localCost: 0,
+//     gm: 58,
+//     januaryData: {
+//       quantity: null,
+//       usd: 12000
+//     },
+//     februaryData: {
+//       quantity: null,
+//       usd: 0
+//     }
+//
+//
+//   }
+// ];
 
 @Component({
   selector: 'app-autocomplete-spfx-web-part',
@@ -268,13 +269,15 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AutocompleteSpfxWebPartComponent implements OnInit {
   currentUser: CurrentUserModel;
-  displayedColumns: string[] = ['checkbox', 'itemName', 'region', 'customerName', 'ecSalesPrice', 'hqHtdCost', 'transferPrice', 'localizationCost', 'localCost', 'gm', 'jan20qty', 'jan20usd', 'feb20qty', 'feb20usd'];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
+  rowsFromServer: IRow[] = [];
+  displayedColumns: string[] = [];
+
+  dataSource: MatTableDataSource<IRow>;
   allowMultiSelect = true;
-  selection = new SelectionModel<PeriodicElement>(true, []);
+  selection = new SelectionModel<IRow>(true, []);
   tableForm: FormGroup;
-  selectedRows: Array<PeriodicElement> = [];
-  selectedRow: PeriodicElement;
+  selectedRows: Array<IRow> = [];
+  selectedRow: IRow;
   fieldsToEdit: DataToEdit = {
     jan21quantity: '',
     feb21quantity: '',
@@ -296,17 +299,26 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
 
   ngOnInit() {
     this.spService.getCurrentUser().subscribe((data) => this.currentUser = data);
-    pnp.sp.web.currentUser.get().then(a => {
-      console.log('aaa', a)
-    });
+    this.spService.getList().subscribe(list => {
+      this.rowsFromServer = [...list];
+      console.log('rowsFromServer', this.rowsFromServer);
 
+      // TODO: Get Keys
 
-    pnp.sp.web.lists.getByTitle('MasterDataList').views.get().then(fields=>{
-      console.log('fields',fields)
+      this.dataSource = new MatTableDataSource<IRow>(this.rowsFromServer)
     })
-    pnp.sp.web.lists.getByTitle('MasterDataList').items.get().then(rows=>{
-      console.log('rows',rows)
-    })
+    // pnp.sp.web.currentUser.get().then(a => {
+    //   console.log('aaa', a)
+    // });
+
+    //
+    // pnp.sp.web.lists.getByTitle('MasterDataList').views.get().then(fields=>{
+    //   console.log('fields',fields)
+    // })
+    // pnp.sp.web.lists.getByTitle('MasterDataList').items.get().then(rows=>{
+    //   console.log('rows',rows)
+    //
+    // })
 
   }
 
@@ -335,7 +347,7 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     console.log(this.selectedRows);
   }
 
-  onCheck(row: PeriodicElement, event) {
+  onCheck(row: IRow, event) {
     if (event.checked) {
       row.checked = event.checked;
       this.selectedRows.push(row);
