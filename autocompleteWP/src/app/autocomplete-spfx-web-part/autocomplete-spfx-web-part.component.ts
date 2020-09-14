@@ -302,7 +302,9 @@ export class AutocompleteSpfxWebPartComponent implements OnInit {
     this.spService.getList().subscribe(list => {
       this.rowsFromServer = [...list];
       console.log('rowsFromServer', this.rowsFromServer);
-
+      let res = this.rowsFromServer.map((x,index) => Object.keys(x)[index]);
+      console.log(res)
+      this.displayedColumns = [...res];
       // TODO: Get Keys
 
       this.dataSource = new MatTableDataSource<IRow>(this.rowsFromServer)
